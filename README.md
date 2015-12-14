@@ -1,10 +1,10 @@
 # :koala: koa-starter
-A starter kit for a slightly opinionated [koa](http://koajs.com/) project
+A starter kit for a slightly opinionated [Koa](http://koajs.com/) project.
 
 ## Opinions
 I built this package because there's a number of packages I like to use when starting a new project.  The major ones are:
 
-* [koa v1](http://koajs.com/)
+* [Koa v1](http://koajs.com/)
 * [Passport](http://passportjs.org/)
 * [Handlebars](http://handlebarsjs.com/)
 * [Bootstrap v3](http://getbootstrap.com/)
@@ -16,8 +16,8 @@ I'm also including goodies from:
 * [Github Corners](https://github.com/tholman/github-corners)
 
 ## Prerequisites
-* Node.js (Version 5 and up recommended)
-* Github Client ID and Secret (for OAuth)
+* [Node.js](https://nodejs.org/en/) (Version 5 and up recommended)
+* [Github Client ID and Secret](https://github.com/settings/developers) (for OAuth)
 
 ### Installation
 
