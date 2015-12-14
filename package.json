@@ -1,0 +1,38 @@
+{
+  "name": "koa-starter",
+  "version": "1.0.0",
+  "description": "A starter kit for a slightly opinionated koa project.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snollygolly/koa-starter.git"
+  },
+  "keywords": [
+    "koa",
+    "starter",
+    "starter-kit",
+    "handlebars",
+    "passport"
+  ],
+  "author": "snollygolly (@snollygolly)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snollygolly/koa-starter/issues"
+  },
+  "homepage": "https://github.com/snollygolly/koa-starter#readme",
+  "dependencies": {
+    "co": "^4.6.0",
+    "koa": "^1.1.2",
+    "koa-bodyparser": "^2.0.1",
+    "koa-generic-session": "^1.10.0",
+    "koa-hbs": "^0.7.0",
+    "koa-passport": "^1.2.0",
+    "koa-router": "^5.3.0",
+    "koa-static-folder": "^0.1.6",
+    "passport-github": "^1.0.0"
+  }
+}
