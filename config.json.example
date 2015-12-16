@@ -10,5 +10,11 @@
         "clientSecret": "OAUTH CLIENT SECRET FOR GITHUB"
       }
     }
+  },
+  "deploy":{
+    "username": "YOUR USERNAME",
+    "hostname": "YOUR HOSTNAME",
+    "path": "~/Koa-Starter-Kit",
+    "screen": "koa-starter"
   }
 }
