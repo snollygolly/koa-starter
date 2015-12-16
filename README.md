@@ -9,6 +9,7 @@ I built this package because there's a number of packages I like to use when sta
 * [Handlebars](http://handlebarsjs.com/)
 * [Bootstrap v3](http://getbootstrap.com/)
 * [FontAwesome](https://fortawesome.github.io/Font-Awesome/)
+* [ShipIt](https://github.com/shipitjs/shipit)
 
 I'm also including goodies from:
 
