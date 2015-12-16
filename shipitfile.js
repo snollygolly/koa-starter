@@ -47,7 +47,7 @@ module.exports = function (shipit) {
 
   // this task kills any screen with the name set in the config if it's running.  phrased as an if to prevent non-0 exit codes
   shipit.blTask('kill_screen', function () {
-    return shipit.remote("if screen -list | grep -q '" + config.deploy.screen + "'; then screen -S " + config.deploy.screen + " -X quit; fi;");
+    return shipit.remote("if screen -ls | grep -q '" + config.deploy.screen + "'; then kill -15 $(screen -ls | grep " + config.deploy.screen + " | cut -d. -f1); fi;");
   });
 
   shipit.on('deployed', function () {
