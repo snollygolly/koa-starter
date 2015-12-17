@@ -51,6 +51,6 @@ module.exports = function (shipit) {
     // this series of tasks will result in a good deploy assuming everything is \working
     shipit.start( 'kill_screen', 'install', 'install_config', 'start_screen');
     // if you're having problems with the deploy being successful, but not actually starting the server, try this:
-    //shipit.start('kill_screen', 'install', 'install_config', 'wait_port', 'start_session');
+    //shipit.start('kill_screen', 'install', 'install_config', 'start_session');
   });
 };
