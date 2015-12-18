@@ -37,9 +37,13 @@ module.exports = function (shipit) {
   });
 
   // this task copies the config.json from your local folder to the current folder
-  // TODO: improve this so it installs config from a remote location?
-  shipit.blTask('install_config', function () {
-    shipit.remoteCopy('config.json', currentPath);
+  shipit.blTask('install_local_config', function () {
+    return shipit.remoteCopy('config.json', currentPath);
+  });
+
+  // this task copies the config.json from the remote source's root into the current folder
+  shipit.blTask('install_remote_config', function () {
+    return shipit.remote("cd " + config.deploy.path + " && cp config.json " + currentPath);
   });
 
   // this task kills any screen with the name set in the config if it's running.  phrased as an if to prevent non-0 exit codes
@@ -49,7 +53,7 @@ module.exports = function (shipit) {
 
   shipit.on('deployed', function () {
     // this series of tasks will result in a good deploy assuming everything is \working
-    shipit.start( 'kill_screen', 'install', 'install_config', 'start_screen');
+    shipit.start( 'kill_screen', 'install', 'install_local_config', 'start_screen');
     // if you're having problems with the deploy being successful, but not actually starting the server, try this:
     //shipit.start('kill_screen', 'install', 'install_config', 'start_session');
   });
