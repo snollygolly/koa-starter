@@ -55,7 +55,3 @@ app.listen(config.site.port);
 process.on('SIGINT', function() {
   process.exit();
 });
-
-process.on('SIGTERM', function() {
-  process.exit();
-});
