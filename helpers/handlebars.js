@@ -17,3 +17,14 @@ hbs.registerHelper('copyright_year', function(opts) {
 hbs.registerHelper('get_name', function(opts) {
   return config.site.name;
 });
+
+hbs.registerHelper('get_analytics', function(opts) {
+  if (config.site.analytics){
+    return config.site.analytics;
+  }
+});
+
+hbs.registerHelper('has_analytics', function(opts) {
+  let fnTrue=opts.fn, fnFalse=opts.inverse;
+  return (config.site.analytics && config.site.analytics !== false) ? fnTrue() : fnFalse();
+});

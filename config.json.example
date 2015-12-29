@@ -9,7 +9,8 @@
         "clientID": "OAUTH CLIENT ID FOR GITHUB",
         "clientSecret": "OAUTH CLIENT SECRET FOR GITHUB"
       }
-    }
+    },
+    "analytics": "UA-00000000-0"
   },
   "deploy":{
     "username": "YOUR USERNAME",
