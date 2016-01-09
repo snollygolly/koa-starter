@@ -2,7 +2,7 @@
 A starter kit for a slightly opinionated [Koa](http://koajs.com/) project.
 
 ## Opinions
-I built this package because there's a number of packages I like to use when starting a new project.  The major ones are:
+I built this koa starter kit because there's a number of packages I like to use when starting a new project.  The major ones are:
 
 * [Koa v1](http://koajs.com/)
 * [Passport](http://passportjs.org/)
