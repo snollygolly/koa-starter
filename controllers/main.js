@@ -1,14 +1,14 @@
 "use strict";
 
-const config = require('../config.json');
+const config = require("../config.json");
 
 let user = null;
 
-module.exports.account = function* account(){
+module.exports.account = function* account() {
 	if (this.isAuthenticated()) {
-	  user = this.session.passport.user;
-	}else{
-		return this.redirect('/');
+		user = this.session.passport.user;
+	} else {
+		return this.redirect("/");
 	}
-	yield this.render('account', {title: config.site.name, user: JSON.stringify(user, null, 2)});
-}
+	yield this.render("account", {title: config.site.name, user: JSON.stringify(user, null, 2)});
+};

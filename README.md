@@ -16,6 +16,7 @@ I'm also including goodies from:
 * [Bootstrap Social](http://lipis.github.io/bootstrap-social/)
 * [Github Corners](https://github.com/tholman/github-corners)
 * [Google Universal Analytics](https://www.google.com/analytics/)
+* [ESLint](http://eslint.org/)
 
 ## Prerequisites
 * [Node.js](https://nodejs.org/en/) (Version 5 and up recommended)
