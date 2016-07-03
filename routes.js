@@ -9,29 +9,16 @@ const Router = require("koa-router");
 const routes = new Router();
 
 const main = require("./controllers/main.js");
+const account = require("./controllers/account.js");
 
 // routes
-let user = null;
 
-routes.get("/", function* get() {
-	if (this.isAuthenticated()) {
-		user = this.session.passport.user;
-	}
-	yield this.render("index", {title: config.site.name, user: user});
-});
+routes.get("/", main.index);
 
 // for passport
-routes.get("/login", function* get() {
-	if (this.isAuthenticated()) {
-		user = this.session.passport.user;
-	}
-	yield this.render("login", {user: user});
-});
-
-routes.get("/logout", function* get() {
-	this.logout();
-	yield this.redirect("/");
-});
+routes.get("/login", account.login);
+routes.get("/logout", account.logout);
+routes.get("/account", account.index);
 
 // you can add as many strategies as you want
 routes.get("/auth/github",
@@ -44,7 +31,5 @@ routes.get("/auth/github/callback",
 		failureRedirect: "/"
 	})
 );
-
-routes.get("/account", main.account);
 
 app.use(routes.middleware());
