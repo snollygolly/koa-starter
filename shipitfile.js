@@ -2,7 +2,7 @@ module.exports = function (shipit) {
 	require("shipit-deploy")(shipit);
 
 	var config = require("./config.json");
-	var pathStr = "PATH="$PATH:/usr/local/bin"";
+	var pathStr = "PATH='$PATH:/usr/local/bin'";
 	var currentPath = config.deploy.path + "/current";
 
 	shipit.initConfig({
@@ -48,13 +48,13 @@ module.exports = function (shipit) {
 
 	// this task kills any screen with the name set in the config if it"s running.	phrased as an if to prevent non-0 exit codes
 	shipit.blTask("kill_screen", function () {
-		return shipit.remote("if screen -ls | grep -q "" + config.deploy.screen + ""; then screen -S " + config.deploy.screen + " -p 0 -X stuff $"\\003"; fi;");
+		return shipit.remote("if screen -ls | grep -q '" + config.deploy.screen + "'; then screen -S " + config.deploy.screen + " -p 0 -X stuff $'\\003'; fi;");
 	});
 
 	shipit.on("deployed", function () {
 		// this series of tasks will result in a good deploy assuming everything is \working
 		shipit.start( "kill_screen", "install", "install_local_config", "start_screen");
 		// if you"re having problems with the deploy being successful, but not actually starting the server, try this:
-		//shipit.start("kill_screen", "install", "install_config", "start_session");
+		//shipit.start("kill_screen", "install", "install_local_config", "start_session");
 	});
 };
