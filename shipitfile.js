@@ -1,9 +1,9 @@
 module.exports = function (shipit) {
 	require("shipit-deploy")(shipit);
 
-	var config = require("./config.json");
-	var pathStr = "PATH='$PATH:/usr/local/bin'";
-	var currentPath = config.deploy.path + "/current";
+	const config = require("./config.json");
+	const pathStr = "PATH='$PATH:/usr/local/bin'";
+	const currentPath = `${config.deploy.path}/current`;
 
 	shipit.initConfig({
 		default: {
@@ -17,23 +17,23 @@ module.exports = function (shipit) {
 			shallowClone: true
 		},
 		production: {
-			servers: config.deploy.username + "@" + config.deploy.hostname
+			servers: `${config.deploy.username}@${config.deploy.hostname}`
 		}
 	});
 
 	// this task runs an NPM install remotely to install dependencies
 	shipit.blTask("install", function () {
-		return shipit.remote(pathStr + " && cd " + currentPath + " && npm install &> /dev/null");
+		return shipit.remote(`${pathStr} && cd ${currentPath} && npm install &> /dev/null`);
 	});
 
 	// this task starts the server in a screen with a name set in the config
 	shipit.blTask("start_screen", function () {
-		return shipit.remote(pathStr + " && cd " + currentPath + " && screen -S " + config.deploy.screen + " -d -m npm start");
+		return shipit.remote(`${pathStr} && cd ${currentPath} && screen -S ${config.deploy.screen} -d -m npm start`);
 	});
 
 	// this task starts the server directly in the shipit output.	use this instead of start_screen if you"re having problems
 	shipit.blTask("start_session", function () {
-		return shipit.remote(pathStr + " && cd " + currentPath + " && npm start");
+		return shipit.remote(`${pathStr} && cd ${currentPath} && npm start`);
 	});
 
 	// this task copies the config.json from your local folder to the current folder
@@ -43,12 +43,12 @@ module.exports = function (shipit) {
 
 	// this task copies the config.json from the remote source"s root into the current folder
 	shipit.blTask("install_remote_config", function () {
-		return shipit.remote("cd " + config.deploy.path + " && cp config.json " + currentPath);
+		return shipit.remote(`cd ${config.deploy.path}} && cp config.json ${currentPath}`);
 	});
 
 	// this task kills any screen with the name set in the config if it"s running.	phrased as an if to prevent non-0 exit codes
 	shipit.blTask("kill_screen", function () {
-		return shipit.remote("if screen -ls | grep -q '" + config.deploy.screen + "'; then screen -S " + config.deploy.screen + " -p 0 -X stuff $'\\003'; fi;");
+		return shipit.remote(`if screen -ls | grep -q '${config.deploy.screen}'; then screen -S ${config.deploy.screen} -p 0 -X stuff $'\\003'; fi;`);
 	});
 
 	shipit.on("deployed", function () {
