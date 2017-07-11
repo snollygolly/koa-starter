@@ -29,7 +29,7 @@ I'm also including goodies from:
 git clone https://github.com/snollygolly/koa-starter.git
 ```
 
-* Install packages (from inside the koa-starer folder).
+* Install packages (from inside the koa-starter folder).
 ```
 npm install
 ```
