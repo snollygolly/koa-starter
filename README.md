@@ -2,7 +2,7 @@
 A starter kit for a slightly opinionated [Koa](http://koajs.com/) project.
 
 ## Opinions
-I built this koa starter kit because there's a number of packages I like to use when starting a new project.  The major ones are:
+I built this Koa starter kit because there's a number of packages I like to use when starting a new project.  The major ones are:
 
 * [Koa v2](http://koajs.com/)
 * [Passport](http://passportjs.org/)
@@ -20,7 +20,7 @@ I'm also including goodies from:
 * [ESLint](http://eslint.org/)
 
 ## Prerequisites
-* [Node.js](https://nodejs.org/en/) (Version 5 and up recommended)
+* [Node.js](https://nodejs.org/en/) (Version 8 and up recommended, async/await support required)
 * [Github Client ID and Secret](https://github.com/settings/developers) (for OAuth)
 
 ### Installation
