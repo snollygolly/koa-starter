@@ -4,7 +4,8 @@
   "description": "A starter kit for a slightly opinionated koa project.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "./node_modules/.bin/nodemon -e js,hbs ./index.js",
+    "production": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -36,6 +37,7 @@
     "passport-github": "^1.0.0"
   },
   "devDependencies": {
+    "nodemon": "^1.12.1",
     "shipit-cli": "^3.0.0",
     "shipit-deploy": "^2.4.0"
   }
