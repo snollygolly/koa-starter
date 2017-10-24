@@ -5,12 +5,8 @@
     "mocha": true
   },
 
-  "ecmaFeatures": {
-    "generators": true,
-    "blockBindings": true,
-    "templateStrings": true,
-    "arrowFunctions": true,
-    "forOf": true,
+  "parserOptions": {
+    "ecmaVersion": 8
   },
 
   "rules": {
@@ -45,7 +41,7 @@
     "no-var": 2,
     "prefer-const": 1,
     "prefer-template": 1,
-    "require-yield": 1,
+    "require-await": 1,
     "arrow-spacing": 2,
     "generator-star-spacing": [2, "after"],
     "no-confusing-arrow": 2,

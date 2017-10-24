@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/nodemon -e js,hbs ./index.js",
     "production": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/eslint ."
   },
   "repository": {
     "type": "git",
@@ -26,17 +26,18 @@
   },
   "homepage": "https://github.com/snollygolly/koa-starter#readme",
   "dependencies": {
-    "co": "^4.6.0",
-    "koa": "^1.1.2",
-    "koa-bodyparser": "^2.0.1",
-    "koa-generic-session": "^1.10.0",
-    "koa-hbs": "^0.7.0",
-    "koa-passport": "^1.2.0",
-    "koa-router": "^5.3.0",
-    "koa-static-folder": "^0.1.6",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-hbs": "^1.0.0",
+    "koa-mount": "^3.0.0",
+    "koa-passport": "^4.0.1",
+    "koa-router": "^7.2.1",
+    "koa-session": "^5.5.0",
+    "koa-static": "^4.0.1",
     "passport-github": "^1.0.0"
   },
   "devDependencies": {
+    "eslint": "^4.9.0",
     "nodemon": "^1.12.1",
     "shipit-cli": "^3.0.0",
     "shipit-deploy": "^2.4.0"
