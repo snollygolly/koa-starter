@@ -2,7 +2,6 @@
 
 const passport = require("../index.js").passport;
 const config = require("../config.json");
-const co = require("co");
 
 passport.serializeUser((user, done) => {
 	done(null, user);
@@ -24,12 +23,5 @@ passport.use(new GithubStrategy({
 	callbackURL: `${config.site.oauth.host}${port}/auth/github/callback`
 }, (token, tokenSecret, profile, done) => {
 	// retrieve user ...
-	co(function* auth() {
-		// do some async/yield stuff here to get/set profile data
-		done(null, profile);
-	}).catch(function onError(e) {
-		console.error("Something went terribly wrong!");
-		console.error(e.stack);
-		done(e, null);
-	});
+	done(null, profile);
 }));

@@ -4,25 +4,28 @@ const config = require("../config.json");
 
 let user = null;
 
-module.exports.login = function* login() {
-	if (this.isAuthenticated()) {
-		user = this.session.passport.user;
+module.exports.login = async(ctx) => {
+	if (ctx.isAuthenticated()) {
+		user = ctx.session.passport.user;
 	}
-	yield this.render("login", {
+	await ctx.render("login", {
 		user: user
 	});
 };
 
-module.exports.logout = function* logout() {
-	this.logout();
-	yield this.redirect("/");
+module.exports.logout = async(ctx) => {
+	ctx.logout();
+	await ctx.redirect("/");
 };
 
-module.exports.index = function* index() {
-	if (this.isAuthenticated()) {
-		user = this.session.passport.user;
+module.exports.index = async(ctx) => {
+	if (ctx.isAuthenticated()) {
+		user = ctx.session.passport.user;
 	} else {
-		return this.redirect("/");
+		return ctx.redirect("/");
 	}
-	yield this.render("account", {title: config.site.name, user: JSON.stringify(user, null, 2)});
+	await ctx.render("account", {
+		title: config.site.name,
+		user: JSON.stringify(user, null, 2)
+	});
 };

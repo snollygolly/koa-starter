@@ -4,11 +4,11 @@ const config = require("../config.json");
 
 let user = null;
 
-module.exports.index = function* index() {
-	if (this.isAuthenticated()) {
-		user = this.session.passport.user;
+module.exports.index = async(ctx) => {
+	if (ctx.isAuthenticated()) {
+		user = ctx.session.passport.user;
 	}
-	yield this.render("index", {
+	await ctx.render("index", {
 		title: config.site.name,
 		user: user
 	});
