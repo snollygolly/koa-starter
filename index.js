@@ -50,15 +50,17 @@ app.use(hbs.middleware({
 
 require("./routes");
 
-app.use((ctx) => {
+// Error handling middleware
+app.use(async (ctx,next) => {
 	try {
-		if (ctx.status === 404) ctx.throw(404);
+		await next();
 	} catch (err) {
 		ctx.status = err.status || 500;
 		ctx.render('error', {
 			message: err.message,
 			error: {}
 		});
+		ctx.app.emit('error', err, this);
 	}
 });
 
