@@ -50,15 +50,18 @@ app.use(hbs.middleware({
 
 require("./routes");
 
-app.use(async(next) => {
+app.use((ctx) => {
 	try {
-		await next;
+		if (ctx.status === 404) ctx.throw(404);
 	} catch (err) {
-		this.status = err.status || 500;
-		this.body = err.message;
-		this.app.emit("error", err, this);
+		ctx.status = err.status || 500;
+		ctx.render('error', {
+			message: err.message,
+			error: {}
+		});
 	}
 });
+
 
 console.log(`${config.site.name} is now listening on port ${config.site.port}`);
 app.listen(config.site.port);
