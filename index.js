@@ -48,21 +48,22 @@ app.use(hbs.middleware({
 	defaultLayout: "main"
 }));
 
-require("./routes");
 
 // Error handling middleware
-app.use(async (ctx,next) => {
+app.use(async(ctx,next) => {
 	try {
 		await next();
 	} catch (err) {
 		ctx.status = err.status || 500;
-		ctx.render('error', {
+		ctx.render("error", {
 			message: err.message,
 			error: {}
 		});
-		ctx.app.emit('error', err, this);
+		ctx.app.emit("error", err, this);
 	}
 });
+
+require("./routes");
 
 
 console.log(`${config.site.name} is now listening on port ${config.site.port}`);
