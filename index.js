@@ -55,16 +55,14 @@ app.use(async(ctx,next) => {
 		await next();
 	} catch (err) {
 		ctx.status = err.status || 500;
-		ctx.render("error", {
+		await ctx.render("error", {
 			message: err.message,
 			error: {}
 		});
-		ctx.app.emit("error", err, this);
 	}
 });
 
 require("./routes");
-
 
 console.log(`${config.site.name} is now listening on port ${config.site.port}`);
 app.listen(config.site.port);
