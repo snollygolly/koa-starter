@@ -2,9 +2,8 @@
 
 const config = require("../config.json");
 
-let user = null;
-
 module.exports.index = async(ctx) => {
+	let user;
 	if (ctx.isAuthenticated()) {
 		user = ctx.session.passport.user;
 	}

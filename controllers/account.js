@@ -2,9 +2,8 @@
 
 const config = require("../config.json");
 
-let user = null;
-
 module.exports.login = async(ctx) => {
+	let user;
 	if (ctx.isAuthenticated()) {
 		user = ctx.session.passport.user;
 	}
@@ -19,6 +18,7 @@ module.exports.logout = async(ctx) => {
 };
 
 module.exports.index = async(ctx) => {
+	let user;
 	if (ctx.isAuthenticated()) {
 		user = ctx.session.passport.user;
 	} else {
