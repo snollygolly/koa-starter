@@ -32,5 +32,22 @@ router.get("/auth/github/callback",
 	})
 );
 
+router.get("/auth/auth0",
+	passport.authenticate("auth0", {
+		clientID: config.site.oauth.auth0.clientID,
+		domain: config.site.oauth.auth0.domain,
+		responseType: "code",
+		audience: `https://${config.site.oauth.auth0.domain}/userinfo`,
+		scope: "openid profile"
+	})
+);
+
+router.get("/auth/auth0/callback",
+	passport.authenticate("auth0", {
+		successRedirect: "/account",
+		failureRedirect: "/"
+	})
+);
+
 app.use(router.routes());
 app.use(router.allowedMethods());

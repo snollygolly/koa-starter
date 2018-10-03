@@ -18,10 +18,12 @@ I'm also including goodies from:
 * [Github Corners](https://github.com/tholman/github-corners)
 * [Google Universal Analytics](https://www.google.com/analytics/)
 * [ESLint](http://eslint.org/)
+* [Auth0](https://auth0.com/)
 
 ## Prerequisites
 * [Node.js](https://nodejs.org/en/) (Version 8 and up recommended, async/await support required)
 * [Github Client ID and Secret](https://github.com/settings/developers) (for OAuth)
+* [Auth0 Account](https://auth0.com/) (for OAuth)
 
 ### Installation
 

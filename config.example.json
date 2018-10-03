@@ -5,6 +5,11 @@
     "secret": "koa-starter-kit-is-awesome",
     "oauth": {
       "host": "http://127.0.0.1",
+      "auth0": {
+        "domain": "YOUR AUTH0 DOMAIN",
+        "clientID": "YOUR AUTH0 CLIENT ID",
+        "clientSecret": "YOUR AUTH0 CLIENT SECRET"
+      },
       "github": {
         "clientID": "OAUTH CLIENT ID FOR GITHUB",
         "clientSecret": "OAUTH CLIENT SECRET FOR GITHUB"
