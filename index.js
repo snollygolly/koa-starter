@@ -50,11 +50,24 @@ app.use(hbs.middleware({
 
 
 // Error handling middleware
-app.use(async(ctx,next) => {
+app.use(async(ctx, next) => {
 	try {
 		await next();
+		if (ctx.state.api === true && ctx.status === 200) {
+			ctx.body = {
+				error: false,
+				result: ctx.body
+			};
+		}
 	} catch (err) {
+		ctx.app.emit("error", err, this);
 		ctx.status = err.status || 500;
+		if (ctx.state.api === true) {
+			return ctx.body = {
+				error: true,
+				message: err.message
+			};
+		}
 		await ctx.render("error", {
 			message: err.message,
 			error: {}

@@ -7,8 +7,8 @@ I built this Koa starter kit because there's a number of packages I like to use 
 * [Koa v2](http://koajs.com/)
 * [Passport](http://passportjs.org/)
 * [Handlebars](http://handlebarsjs.com/)
-* [Bootstrap v4 Beta](http://getbootstrap.com/)
-* [FontAwesome](https://fortawesome.github.io/Font-Awesome/)
+* [Bootstrap v4.2.1](http://getbootstrap.com/)
+* [FontAwesome 4.7](https://fortawesome.github.io/Font-Awesome/)
 * [ShipIt](https://github.com/shipitjs/shipit)
 
 I'm also including goodies from:
@@ -47,3 +47,45 @@ npm start
 ```
 
 * Enjoy!
+
+## Extras
+
+While koa-starter isn't a framework, I've added a few small extras to make getting your project up and started as easy as possible.
+
+#### Including assets from view rendering
+
+When you render you view, you can use the following properties to link to assets.
+
+- Scripts: This array contains scripts living in `/assets/js` that you'd like to link to.  The `.js` will be added for you.
+
+```
+await ctx.render("index", {
+  title: config.site.name,
+  user: user,
+  scripts: ["index", "extra"]
+});
+```
+
+- Vendor JavaScript: This array contains links to external files you'd like to link to.  The `.js` will not be added for you.
+
+```
+await ctx.render("index", {
+  title: config.site.name,
+  user: user,
+  vendor_js: ["http://vendor.com/cdn/lib.min.js"]
+});
+```
+
+- Vendor CSS: This array contains links to external files you'd like to link to.  The `.css` will not be added for you.
+
+```
+await ctx.render("index", {
+  title: config.site.name,
+  user: user,
+  vendor_css: ["http://vendor.com/cdn/lib.min.css"]
+});
+```
+
+#### Error Handling
+
+Thrown errors are caught in the error handling middleware in `index.js`.  By default, all errors will render the `error.hbs` view with information about the error.  It's possible to set `ctx.state.api` equal to `true` in the controller to tell the error handling middleware that this route is an API endpoint, and the error should be sent in JSON instead of rendered as a view.
