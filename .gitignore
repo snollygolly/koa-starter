@@ -31,3 +31,4 @@ config.json
 
 # For deploying
 tmp
+.DS_Store
