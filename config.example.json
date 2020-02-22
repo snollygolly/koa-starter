@@ -16,11 +16,5 @@
       }
     },
     "analytics": "UA-00000000-0"
-  },
-  "deploy":{
-    "username": "YOUR USERNAME",
-    "hostname": "YOUR HOSTNAME",
-    "path": "~/Koa-Starter-Kit",
-    "screen": "koa-starter"
   }
 }
