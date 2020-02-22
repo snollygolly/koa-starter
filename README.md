@@ -9,7 +9,6 @@ I built this Koa starter kit because there's a number of packages I like to use 
 * [Handlebars](http://handlebarsjs.com/)
 * [Bootstrap v4.2.1](http://getbootstrap.com/)
 * [FontAwesome 4.7](https://fortawesome.github.io/Font-Awesome/)
-* [ShipIt](https://github.com/shipitjs/shipit)
 
 I'm also including goodies from:
 

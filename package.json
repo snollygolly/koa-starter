@@ -1,6 +1,6 @@
 {
   "name": "koa-starter",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A starter kit for a slightly opinionated koa project.",
   "main": "index.js",
   "scripts": {
@@ -39,8 +39,6 @@
   },
   "devDependencies": {
     "eslint": "^4.9.0",
-    "nodemon": "^1.12.1",
-    "shipit-cli": "^3.0.0",
-    "shipit-deploy": "^2.4.0"
+    "nodemon": "^1.12.1"
   }
 }
