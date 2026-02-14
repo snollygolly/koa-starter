@@ -4,7 +4,7 @@ A starter kit for a slightly opinionated [Koa](http://koajs.com/) project.
 ## Opinions
 I built this Koa starter kit because there's a number of packages I like to use when starting a new project.  The major ones are:
 
-* [Koa v2](http://koajs.com/)
+* [Koa v3](http://koajs.com/)
 * [Passport](http://passportjs.org/)
 * [Handlebars](http://handlebarsjs.com/)
 * [Bootstrap v4.2.1](http://getbootstrap.com/)
@@ -20,8 +20,7 @@ I'm also including goodies from:
 * [Auth0](https://auth0.com/)
 
 ## Prerequisites
-* [Node.js](https://nodejs.org/en/) (Version 8 and up recommended, async/await support required)
-* [Github Client ID and Secret](https://github.com/settings/developers) (for OAuth)
+* [Node.js](https://nodejs.org/en/) (Version 22 and up recommended, async/await support required)
 * [Auth0 Account](https://auth0.com/) (for OAuth)
 
 ### Installation
