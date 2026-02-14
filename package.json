@@ -26,19 +26,19 @@
   },
   "homepage": "https://github.com/snollygolly/koa-starter#readme",
   "dependencies": {
-    "koa": "^2.3.0",
-    "koa-bodyparser": "^4.2.0",
-    "koa-hbs": "^1.0.0",
-    "koa-mount": "^3.0.0",
-    "koa-passport": "^4.0.1",
-    "koa-router": "^7.2.1",
-    "koa-session": "^5.5.0",
-    "koa-static": "^4.0.1",
-    "passport-auth0": "^1.0.0",
-    "passport-github": "^1.0.0"
+    "@koa/bodyparser": "^6.1.0",
+    "@koa/router": "^15.3.0",
+    "koa": "^3.1.1",
+    "koa-hbs": "^0.9.0",
+    "koa-mount": "^4.2.0",
+    "koa-passport": "^6.0.0",
+    "koa-session": "^7.0.2",
+    "koa-static": "^5.0.0",
+    "passport-auth0": "^1.4.5"
   },
   "devDependencies": {
-    "eslint": "^4.9.0",
-    "nodemon": "^1.12.1"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.0",
+    "nodemon": "^3.1.11"
   }
 }

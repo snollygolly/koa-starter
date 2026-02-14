@@ -4,7 +4,7 @@ const config = require("./config.json");
 
 const app = require("./index.js").app;
 const passport = require("./index.js").passport;
-const Router = require("koa-router");
+const Router = require("@koa/router");
 
 const router = new Router();
 
