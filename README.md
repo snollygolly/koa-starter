@@ -7,8 +7,8 @@ I built this Koa starter kit because there's a number of packages I like to use 
 * [Koa v3](http://koajs.com/)
 * [Passport](http://passportjs.org/)
 * [Handlebars](http://handlebarsjs.com/)
-* [Bootstrap v4.2.1](http://getbootstrap.com/)
-* [FontAwesome 4.7](https://fortawesome.github.io/Font-Awesome/)
+* [Bootstrap v5.3.8](http://getbootstrap.com/)
+* [FontAwesome 5.10](https://fortawesome.github.io/Font-Awesome/)
 
 I'm also including goodies from:
 
