@@ -17,16 +17,6 @@ passport.deserializeUser((user, done) => {
 	done(null, user);
 });
 
-const GithubStrategy = require("passport-github").Strategy;
-passport.use(new GithubStrategy({
-	clientID: config.site.oauth.github.clientID,
-	clientSecret: config.site.oauth.github.clientSecret,
-	callbackURL: `${config.site.oauth.host}${port}/auth/github/callback`
-}, (token, tokenSecret, profile, done) => {
-	// retrieve user ...
-	done(null, profile);
-}));
-
 const Auth0Strategy = require("passport-auth0");
 passport.use(new Auth0Strategy({
 	domain: config.site.oauth.auth0.domain,
